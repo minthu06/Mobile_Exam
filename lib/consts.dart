@@ -15,6 +15,7 @@ List<MobileModel> mobilist = [
       name: 'Iphone 14 pro max',
       img: 'assets/dt1.jpg',
       company: 'Apple',
+      title: "this phone",
       price: 123,
       isselected: false,
       color:gray),
@@ -22,6 +23,7 @@ List<MobileModel> mobilist = [
       name: 'Iphone 12 pro ',
       img: 'assets/dt2.jpg',
       company: 'Apple',
+        title: "this phone",
       price: 103,
       isselected: false,
       color: Colors.amber.shade700),
@@ -29,6 +31,7 @@ List<MobileModel> mobilist = [
       name: 'Iphone 13 pro max',
       img: 'assets/dt3.jpg',
       company: 'Apple',
+        title: "this phone",
       price: 100,
       isselected: false,
       color: gray),
@@ -39,6 +42,7 @@ List<MobileModel> laptoplist = [
       name: 'Lenovo thinkpad',
       img: 'assets/lt1.jpg',
       company: 'Lenovo',
+        title: "this laptop",
       price: 223,
       isselected: false,
       color: Colors.teal),
@@ -46,6 +50,7 @@ List<MobileModel> laptoplist = [
        name: 'Dell XPS',
       img: 'assets/lt2.jpg',
       company: 'Dell',
+        title: "this laptop",
       price: 199,
       isselected: false,
       color: Colors.amber.shade700),
@@ -53,6 +58,7 @@ List<MobileModel> laptoplist = [
        name: 'Asus tufgaming',
       img: 'assets/lt3.jpg',
       company: 'Asus',
+        title: "this laptop",
       price: 109,
       isselected: false,
       color: gray),
@@ -63,6 +69,7 @@ List<MobileModel> phukienlist = [
       name: 'Tai nghe',
       img: 'assets/pk1.jpg',
       company: 'Apple',
+        title: "this phukien",
       price: 499,
       isselected: false,
       color: Colors.amber.shade700),
@@ -70,12 +77,14 @@ List<MobileModel> phukienlist = [
       name: 'Ban phim',
       img: 'assets/pk2.jpg',
       company: 'Asus',
+       title: "this phukien",
       price: 567,
       isselected: false,
       color: gray),
   MobileModel(
       name: 'Chuot',
       img: 'assets/pk3.jpg',
+       title: "this phukien",
       company: 'Dell',
       price: 533,
       isselected: false,
@@ -84,7 +93,7 @@ List<MobileModel> phukienlist = [
 
 List<MobileModel> allshoes = mobilist + laptoplist + phukienlist;
 
-List sizes = [40, 41, 42, 43, 44];
+// List sizes = [40, 41, 42, 43, 44];
 
 List<CartModel> boughtitems = [];
 List<MobileModel> favouriteitems = [];
