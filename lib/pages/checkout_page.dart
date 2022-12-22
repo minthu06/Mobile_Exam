@@ -62,7 +62,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Image.asset(
-                              'assets/images/banner.png',
+                              'assets/banner.png',
                               width: 80,
                             ),
                             const SizedBox(
@@ -102,7 +102,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                   ),
                                   const Spacer(),
                                   Text(
-                                    'Visa #3246445',
+                                    'ID: #3246445',
                                     style: style.copyWith(
                                         fontSize: 12, color: Colors.black),
                                   )

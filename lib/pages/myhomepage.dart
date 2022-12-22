@@ -3,6 +3,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 
 import 'package:tapmobile/consts.dart';
+import 'package:tapmobile/models/cart_model.dart';
 import 'package:tapmobile/pages/details_page.dart';
 import 'package:tapmobile/models/mobi_model.dart';
 import 'package:tapmobile/pages/my_favorite.dart';
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage>
                       width: 3,
                     ),
                     Text(
-                      'Pay',
+                      'Cart',
                       style: style.copyWith(
                           fontSize: 14,
                           fontWeight: FontWeight.w900,
@@ -196,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage>
                   child: Image.asset(
                     myitems[index].img,
                     fit: BoxFit.cover,
-                    width: 130,
+                    width: 200,
                   ),
                 ),
                 Column(
@@ -239,12 +240,44 @@ class _MyHomePageState extends State<MyHomePage>
                           fontSize: 18, fontWeight: FontWeight.normal),
                     ),
                     const Spacer(),
-                    Text(
+                    Row(
+                      children: [
+                         Text(
                       '${myitems[index].price} \$',
                       style: style.copyWith(
                           fontSize: 22, fontWeight: FontWeight.bold),
+                       ),
+                       const Spacer(),
+                        // GestureDetector(
+                        //     onTap: () { boughtitems.add(
+                        //               CartModel(
+                        //                 name: widget.item.name,
+                        //                 price: widget.item.price,
+                        //                 img: widget.item.img,
+                        //                 color: widget.item.color,
+                        //                 items: 1,
+                                      
+                        //               ),
+                        //             );
+                        //             total = total + widget.item.price;
+                        //             Navigator.pop(context);
+                        //           },
+                        //                   // Navigator.push(context,
+
+                        //       //     MaterialPageRoute(builder: (_buildcartitem) => const MyCart()));
+                            
+                            //  child: 
+                              const Icon(
+                                    Icons.shopping_cart,
+                                    color: Colors.white ,
+                                    size: 28,
+                                  ),
+                          // ),
+                            ],
                     ),
+          
                   ],
+                  
                 ),
               ],
             ),
@@ -254,3 +287,4 @@ class _MyHomePageState extends State<MyHomePage>
     );
   }
 }
+

@@ -84,9 +84,9 @@ class _MyCartState extends State<MyCart> {
                                                 )));
                                   },
                                   child: Text(
-                                    'Chekout',
+                                    'Thanh Toán',
                                     style: style.copyWith(
-                                        color: white, fontSize: 20),
+                                        color: white, fontSize: 25),
                                   ),
                                 ),
                               ),
@@ -196,7 +196,7 @@ class _MyCartState extends State<MyCart> {
                         color: Colors.black),
                   ),
                   Text(
-                    'Items : ${boughtitems[index].items}',
+                    'Soluong : ${boughtitems[index].items}',
                     style: style.copyWith(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
@@ -214,14 +214,14 @@ class _MyCartState extends State<MyCart> {
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
-                  'Size:${boughtitems[index].size}',
-                  maxLines: 1,
-                  style: style.copyWith(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black),
-                ),
+                // Text(
+                //   'title:${boughtitems[index].items}',
+                //   maxLines: 1,
+                //   style: style.copyWith(
+                //       fontSize: 14,
+                //       fontWeight: FontWeight.w600,
+                //       color: Colors.black),
+                // ),
               ],
             )
           ],

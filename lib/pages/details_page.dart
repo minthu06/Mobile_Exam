@@ -61,19 +61,23 @@ class _DetailsPageState extends State<DetailsPage> {
               height: 10,
             ),
             Text(
-              'Loai',
+              'title:',
               style: style.copyWith(
                   fontWeight: FontWeight.w100,
                   fontSize: 20,
                   color: Colors.black),
             ),
-            const SizedBox(
-              height: 20,
+            Text(
+              widget.item.title,
+              style: style.copyWith(
+                  fontWeight: FontWeight.w100,
+                  fontSize: 14,
+                  color: Colors.black),
             ),
-            _buildsizes(),
             const SizedBox(
-              height: 30,
+              height: 10,
             ),
+            
             _buildbutton(_screenheight)
           ],
         ),
@@ -110,7 +114,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   img: widget.item.img,
                   color: widget.item.color,
                   items: 1,
-                  size: sizes[value],
+                 
                 ),
               );
               total = total + widget.item.price;
@@ -129,7 +133,7 @@ class _DetailsPageState extends State<DetailsPage> {
               ),
               Text(
                 'Add To Cart',
-                style: style.copyWith(fontSize: 18, color: Colors.white),
+                style: style.copyWith(fontSize: 18, color: Color.fromARGB(255, 255, 255, 255)),
               ),
             ],
           ),
@@ -191,7 +195,7 @@ class _DetailsPageState extends State<DetailsPage> {
             Center(
               child: Image.asset(
                 widget.item.img,
-                width: 500,
+                width: 300,
                 fit: BoxFit.cover,
               ),
             ),
@@ -201,48 +205,48 @@ class _DetailsPageState extends State<DetailsPage> {
     );
   }
 
-  Widget _buildsizes() {
-    return SizedBox(
-        height: 40,
-        width: 500,
-        child: ListView(
-          physics: const NeverScrollableScrollPhysics(),
-          scrollDirection: Axis.horizontal,
-          children: [
-            _buildsizesitem(index: 0, title: sizes[0]),
-            _buildsizesitem(index: 1, title: sizes[1]),
-            _buildsizesitem(index: 2, title: sizes[2]),
-            _buildsizesitem(index: 3, title: sizes[3]),
-            _buildsizesitem(index: 4, title: sizes[4]),
-          ],
-        ));
-  }
+  // Widget _buildsizes() {
+  //   return SizedBox(
+  //       height: 40,
+  //       width: 500,
+  //       child: ListView(
+  //         physics: const NeverScrollableScrollPhysics(),
+  //         scrollDirection: Axis.horizontal,
+  //         children: [
+  //           _buildsizesitem(index: 0, title: sizes[0]),
+  //           _buildsizesitem(index: 1, title: sizes[1]),
+  //           _buildsizesitem(index: 2, title: sizes[2]),
+  //           _buildsizesitem(index: 3, title: sizes[3]),
+  //           _buildsizesitem(index: 4, title: sizes[4]),
+  //         ],
+  //       ));
+  // }
 
-  Widget _buildsizesitem({required int index, required int title}) {
-    return AspectRatio(
-      aspectRatio: 1 / 1,
-      child: GestureDetector(
-        onTap: () {
-          setState(() {
-            value = index;
-          });
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: value == index ? widget.item.color : Colors.transparent,
-          ),
-          child: Center(
-              child: Text(
-            title.toString(),
-            style: style.copyWith(
-              fontSize: 15,
-              fontWeight: FontWeight.w900,
-              color: value == index ? Colors.white : Colors.black,
-            ),
-          )),
-        ),
-      ),
-    );
-  }
+  // Widget _buildsizesitem({required int index, required int title}) {
+  //   return AspectRatio(
+  //     aspectRatio: 1 / 1,
+  //     child: GestureDetector(
+  //       onTap: () {
+  //         setState(() {
+  //           value = index;
+  //         });
+  //       },
+  //       child: Container(
+  //         decoration: BoxDecoration(
+  //           borderRadius: BorderRadius.circular(10),
+  //           color: value == index ? widget.item.color : Colors.transparent,
+  //         ),
+  //         child: Center(
+  //             child: Text(
+  //           title.toString(),
+  //           style: style.copyWith(
+  //             fontSize: 15,
+  //             fontWeight: FontWeight.w900,
+  //             color: value == index ? Colors.white : Colors.black,
+  //           ),
+  //         )),
+  //       ),
+  //     ),
+  //   );
+  //}
 }
