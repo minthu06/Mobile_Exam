@@ -102,15 +102,14 @@ class _MyCartState extends State<MyFavorite> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
+                width: 80,
+                height: 80,
                 padding: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage(favouriteitems[index].img),fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(20),
                     color: favouriteitems[index].color),
-                child: Image.asset(
-                  favouriteitems[index].img,
-                  fit: BoxFit.cover,
-                  width: 80,
-                )),
+               ),
             const SizedBox(
               width: 10,
             ),

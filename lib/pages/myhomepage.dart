@@ -86,22 +86,24 @@ class _MyHomePageState extends State<MyHomePage>
               },
               child: Padding(
                 padding: const EdgeInsets.only(top: 20, right: 30),
-                child: favouriteitems.isNotEmpty
-                    ? Badge(
-                        badgeContent: Text(
-                          favouriteitems.length.toString(),
-                          style: style.copyWith(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w900,
-                              color: white),
-                        ),
-                        child: const Icon(
-                          Icons.favorite,
-                          color: Color.fromARGB(255, 226, 59, 59),
-                          size: 28,
-                        ),
-                      )
-                    : const Icon(
+                child:
+                //  favouriteitems.isNotEmpty
+                //     ? Badge(
+                //         badgeContent: Text(
+                //           favouriteitems.length.toString(),
+                //           style: style.copyWith(
+                //               fontSize: 10,
+                //               fontWeight: FontWeight.w900,
+                //               color: white),
+                //         ),
+                //         child: const Icon(
+                //           Icons.favorite,
+                //           color: Color.fromARGB(255, 226, 59, 59),
+                //           size: 28,
+                //         ),
+                //       )
+                //     : const
+                    Icon(
                         Icons.favorite,
                         color: Color.fromARGB(255, 226, 59, 59),
                         size: 28,
@@ -194,10 +196,16 @@ class _MyHomePageState extends State<MyHomePage>
             child: Stack(
               children: [
                 Center(
-                  child: Image.asset(
-                    myitems[index].img,
-                    fit: BoxFit.cover,
-                    width: 200,
+                  child: Container(
+                     width: 200,
+                  height: 200,
+                  padding: const EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage( myitems[index].img),fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(20),
+                      ),
+
+
                   ),
                 ),
                 Column(
@@ -256,7 +264,7 @@ class _MyHomePageState extends State<MyHomePage>
                         //                 img: widget.item.img,
                         //                 color: widget.item.color,
                         //                 items: 1,
-                                      
+
                         //               ),
                         //             );
                         //             total = total + widget.item.price;
@@ -265,8 +273,8 @@ class _MyHomePageState extends State<MyHomePage>
                         //                   // Navigator.push(context,
 
                         //       //     MaterialPageRoute(builder: (_buildcartitem) => const MyCart()));
-                            
-                            //  child: 
+
+                            //  child:
                               const Icon(
                                     Icons.shopping_cart,
                                     color: Colors.white ,
@@ -275,9 +283,9 @@ class _MyHomePageState extends State<MyHomePage>
                           // ),
                             ],
                     ),
-          
+
                   ],
-                  
+
                 ),
               ],
             ),
@@ -287,4 +295,3 @@ class _MyHomePageState extends State<MyHomePage>
     );
   }
 }
-

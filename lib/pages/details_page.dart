@@ -27,8 +27,8 @@ class _DetailsPageState extends State<DetailsPage> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Colors.black.withOpacity(.5),
                 Colors.black.withOpacity(.0),
+                Colors.black.withOpacity(.5),
               ],
               begin: Alignment.bottomRight,
             ),
@@ -54,30 +54,57 @@ class _DetailsPageState extends State<DetailsPage> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
-              widget.item.name,
-              style: style.copyWith(color: Colors.black),
+                      widget.item.name,
+                      style: style.copyWith(color: Colors.black),
+                    ),
+                    const SizedBox(
+                  height: 10,
+                ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10.0, bottom: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                        Text(
+                          'Title:',
+                          style: style.copyWith(
+                              fontWeight: FontWeight.w100,
+                              fontSize: 20,
+                              color: Colors.black),
+                        ),
+                        Text(
+                          widget.item.title,
+                          style: style.copyWith(
+                              fontWeight: FontWeight.w100,
+                              fontSize: 16,
+                              color: Colors.black),
+                        ),
+                          ],
+                  ),
+                  Column(
+                    // crossAxisAlignment: CrossAxisAlignment.end,
+                    // mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                         Text(
+                    "\$" + widget.item.price.toString(),
+                    style: style.copyWith(
+                        fontWeight: FontWeight.w100,
+                        fontSize: 20,
+                        color: Colors.black),
+                  ),
+                    ],
+                  ),
+                ],
+              ),
             ),
+
             const SizedBox(
               height: 10,
+
             ),
-            Text(
-              'title:',
-              style: style.copyWith(
-                  fontWeight: FontWeight.w100,
-                  fontSize: 20,
-                  color: Colors.black),
-            ),
-            Text(
-              widget.item.title,
-              style: style.copyWith(
-                  fontWeight: FontWeight.w100,
-                  fontSize: 14,
-                  color: Colors.black),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            
+
             _buildbutton(_screenheight)
           ],
         ),
@@ -114,7 +141,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   img: widget.item.img,
                   color: widget.item.color,
                   items: 1,
-                 
+
                 ),
               );
               total = total + widget.item.price;
@@ -193,12 +220,18 @@ class _DetailsPageState extends State<DetailsPage> {
               ],
             ),
             Center(
-              child: Image.asset(
-                widget.item.img,
-                width: 300,
-                fit: BoxFit.cover,
-              ),
-            ),
+                  child: Container(
+                     width: 300,
+                  height: 300,
+                  padding: const EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage( widget.item.img),fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(20),
+                      ),
+
+
+                  ),
+                ),
           ],
         ),
       ),

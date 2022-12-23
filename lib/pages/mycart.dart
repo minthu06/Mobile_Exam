@@ -83,10 +83,13 @@ class _MyCartState extends State<MyCart> {
                                                   cartModel: boughtitems,
                                                 )));
                                   },
-                                  child: Text(
-                                    'Thanh Toán',
-                                    style: style.copyWith(
-                                        color: white, fontSize: 25),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'Thanh Toán',
+                                      style: style.copyWith(
+                                          color: white, fontSize: 25),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -101,7 +104,7 @@ class _MyCartState extends State<MyCart> {
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: style.copyWith(
-                                    fontSize: 14, color: Colors.black),
+                                    fontSize: 16, color: Colors.black),
                               ),
                             )
                           ],
@@ -162,15 +165,14 @@ class _MyCartState extends State<MyCart> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+                width: 80,
+                height: 80,
                 padding: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage( boughtitems[index].img), fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(20),
                     color: boughtitems[index].color),
-                child: Image.asset(
-                  boughtitems[index].img,
-                  fit: BoxFit.cover,
-                  width: 80,
-                )),
+                  ),
             const SizedBox(
               width: 10,
             ),
